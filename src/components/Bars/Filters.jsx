@@ -39,7 +39,7 @@ export default function Filters() {
   }
 
   return (
-    <div className="w-96 h-full bg-gray-200 p-24 fixed left-0 opacity-100 items-center z-20">
+    <div className="w-56 lg:w-96 h-full bg-gray-200 pt-20 px-2 fixed left-0 opacity-100 items-center z-20">
       <div className="flex items-center flex-col m-2">
         <label className="font-semibold">Vaccine Dose:</label>
         <select

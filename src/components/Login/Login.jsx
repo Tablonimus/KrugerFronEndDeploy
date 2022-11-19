@@ -3,17 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/actions";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { ToastContainer,toast } from "react-toastify";
-
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
   const loggedUser = useSelector((state) => state.loggedUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (!loggedUser) {navigate("/")}/* else {navigate("/home")}; */
-  // }, []);
 
   const [user, setUser] = useState({
     email: "",
@@ -34,9 +29,7 @@ export default function Login() {
         console.log("review input data");
       } else {
         dispatch(login(user));
-        toast(
-          "Logging to the site"
-        )
+        toast("Logging to the site");
         setTimeout(() => navigate("/home"), [5000]);
       }
     } catch (error) {
@@ -46,7 +39,7 @@ export default function Login() {
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center rounded-lg shadow-lg">
-     <ToastContainer/>
+      <ToastContainer />
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col bg-blue-400 w-96 h-56 rounded-lg opacity-70 items-center justify-center"

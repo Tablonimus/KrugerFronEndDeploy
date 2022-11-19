@@ -29,6 +29,9 @@ export default function NavBar() {
   function dashboardHandler(){
     navigate("/home")
   }
+  function downloadHandler(){
+    navigate("/download")
+  }
 
   return (
     <Navbar fluid={true} rounded={true} className="w-screen fixed top-0 z-30">
@@ -53,6 +56,7 @@ export default function NavBar() {
           </Dropdown.Header>
           <Dropdown.Item onClick={dashboardHandler}>Dashboard</Dropdown.Item>
           <Dropdown.Item onClick={profileHandler}>Profile</Dropdown.Item>
+          <Dropdown.Item onClick={downloadHandler}>Download</Dropdown.Item>
           {/* <Dropdown.Item>Earnings</Dropdown.Item> */}
           <Dropdown.Divider />
           <Dropdown.Item onClick={signOutHandler}>Sign out</Dropdown.Item>

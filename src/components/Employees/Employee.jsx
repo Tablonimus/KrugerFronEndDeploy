@@ -18,7 +18,7 @@ export default function Employee({
   vaccination_status,
   vaccine_date,
   vaccine_dose,
-  vaccine_type
+  vaccine_type,
 }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -120,7 +120,7 @@ export default function Employee({
     dispatch(patchUser(payload));
   }
   return (
-    <div className="bg-gray-200 w-96 justify-between rounded-lg shadow-lg flex flex p-5 font-bold">
+    <div className="bg-gray-200 w-96 justify-between rounded-lg shadow-lg flex  p-5 font-bold">
       <div className="flex flex-col">
         <span>
           Name: {name} {last_name}
@@ -156,41 +156,41 @@ export default function Employee({
           <img src={dele} alt="" className="w-6" />
         </button>
       </div>
-    
-        <Modal
-          show={modal}
-          size="lg"
-          popup={true}
-          onClose={onClose}
-          className="bg-gray-600 rounded"
-        >
-          <Modal.Header className="bg-blue-400 opacity-80 " />
-          <Modal.Body className="bg-blue-400 opacity-80">
-            <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8 flex flex-col items-center ">
-              <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-                Edit employee information
-              </h3>
-              <div className=" rounded-lg flex flex-col ">
-                <form
-                  action=""
-                  onSubmit={(e) => handleSubmit(e)}
-                  className="flex flex-col gap-2 items-center"
-                >
-                  <div className="flex gap-1">
-                    <div>
-                      <label htmlFor="name" className="font-semibold">
-                        Name:
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        maxLength={20}
-                        placeholder={name}
-                        className="rounded-lg shadow-lg"
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.name === "" ? (
+
+      <Modal
+        show={modal}
+        size="lg"
+        popup={true}
+        onClose={onClose}
+        className="bg-gray-600 rounded"
+      >
+        <Modal.Header className="bg-blue-400 opacity-80 " />
+        <Modal.Body className="bg-blue-400 opacity-80">
+          <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8 flex flex-col items-center ">
+            <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+              Edit employee information
+            </h3>
+            <div className=" rounded-lg flex flex-col ">
+              <form
+                action=""
+                onSubmit={(e) => handleSubmit(e)}
+                className="flex flex-col gap-2 items-center"
+              >
+                <div className="flex gap-1">
+                  <div>
+                    <label htmlFor="name" className="font-semibold">
+                      Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      maxLength={20}
+                      placeholder={name}
+                      className="rounded-lg shadow-lg"
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.name === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Only letters (min 3 characters)
                         </span>
@@ -203,21 +203,21 @@ export default function Employee({
                           ❌ Only letters (min 3 characters)
                         </span>
                       )} */}
-                    </div>
-                    <div>
-                      <label htmlFor="last_name" className="font-semibold">
-                        Last name:
-                      </label>
-                      <input
-                        type="text"
-                        id="last_name"
-                        name="last_name"
-                        maxLength={20}
-                        placeholder={last_name}
-                        className="rounded-lg shadow-lg"
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.last_name === "" ? (
+                  </div>
+                  <div>
+                    <label htmlFor="last_name" className="font-semibold">
+                      Last name:
+                    </label>
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      maxLength={20}
+                      placeholder={last_name}
+                      className="rounded-lg shadow-lg"
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.last_name === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Only letters (min 3 characters)
                         </span>
@@ -230,23 +230,23 @@ export default function Employee({
                           ❌ Only letters (min 3 characters)
                         </span>
                       )} */}
-                    </div>
                   </div>
+                </div>
 
-                  <div className="flex gap-1">
-                    <div>
-                      <label htmlFor="email" className="font-semibold">
-                        Email:
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder={email}
-                        className="rounded-lg shadow-lg"
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.email === "" ? (
+                <div className="flex gap-1">
+                  <div>
+                    <label htmlFor="email" className="font-semibold">
+                      Email:
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder={email}
+                      className="rounded-lg shadow-lg"
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.email === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Valid Email
                         </span>
@@ -259,22 +259,22 @@ export default function Employee({
                           ❌ Valid Email
                         </span>
                       )} */}
-                    </div>
-                    <div>
-                      <label htmlFor="identification" className="font-semibold">
-                        Identification:
-                      </label>
-                      <input
-                        type="text"
-                        id="identification"
-                        name="identification"
-                        maxLength={10}
-                        minLength={10}
-                        placeholder={identification}
-                        className="rounded-lg shadow-lg "
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.identification === "" ? (
+                  </div>
+                  <div>
+                    <label htmlFor="identification" className="font-semibold">
+                      Identification:
+                    </label>
+                    <input
+                      type="text"
+                      id="identification"
+                      name="identification"
+                      maxLength={10}
+                      minLength={10}
+                      placeholder={identification}
+                      className="rounded-lg shadow-lg "
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.identification === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Must have 10 numbers
                         </span>
@@ -287,22 +287,22 @@ export default function Employee({
                           ❌ Must have 10 numbers
                         </span>
                       )} */}
-                    </div>
                   </div>
-                  <div className="flex gap-1">
-                    <div>
-                      <label htmlFor="phone" className="font-semibold">
-                        Phone:
-                      </label>
-                      <input
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        placeholder={phone || "-"}
-                        className="rounded-lg shadow-lg"
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.email === "" ? (
+                </div>
+                <div className="flex gap-1">
+                  <div>
+                    <label htmlFor="phone" className="font-semibold">
+                      Phone:
+                    </label>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      placeholder={phone || "-"}
+                      className="rounded-lg shadow-lg"
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.email === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Valid Phone
                         </span>
@@ -315,22 +315,22 @@ export default function Employee({
                           ❌ Valid Phone
                         </span>
                       )} */}
-                    </div>
-                    <div>
-                      <label htmlFor="adress" className="font-semibold">
-                        Adress:
-                      </label>
-                      <input
-                        type="text"
-                        id="adress"
-                        name="adress"
-                        maxLength={30}
-                        minLength={10}
-                        placeholder={adress || "-"}
-                        className="rounded-lg shadow-lg "
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.identification === "" ? (
+                  </div>
+                  <div>
+                    <label htmlFor="adress" className="font-semibold">
+                      Adress:
+                    </label>
+                    <input
+                      type="text"
+                      id="adress"
+                      name="adress"
+                      maxLength={30}
+                      minLength={10}
+                      placeholder={adress || "-"}
+                      className="rounded-lg shadow-lg "
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.identification === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Must have 10 numbers
                         </span>
@@ -343,22 +343,22 @@ export default function Employee({
                           ❌ Must have 10 numbers
                         </span>
                       )} */}
-                    </div>
                   </div>
-                  <div className="flex gap-1">
-                    <div>
-                      <label htmlFor="birthdate" className="font-semibold">
-                        Birth:
-                      </label>
-                      <input
-                        type="date"
-                        id="birthdate"
-                        name="birthdate"
-                        placeholder={birthdate || "-"}
-                        className="rounded-lg shadow-lg "
-                        onChange={(e) => handleChange(e)}
-                      />
-                      {/* {error.identification === "" ? (
+                </div>
+                <div className="flex gap-1">
+                  <div>
+                    <label htmlFor="birthdate" className="font-semibold">
+                      Birth:
+                    </label>
+                    <input
+                      type="date"
+                      id="birthdate"
+                      name="birthdate"
+                      placeholder={birthdate || "-"}
+                      className="rounded-lg shadow-lg "
+                      onChange={(e) => handleChange(e)}
+                    />
+                    {/* {error.identification === "" ? (
                         <span className="text-[10px] text-red-500 font-bold">
                           ❌ Must have 10 numbers
                         </span>
@@ -371,18 +371,17 @@ export default function Employee({
                           ❌ Must have 10 numbers
                         </span>
                       )} */}
-                    </div>
                   </div>
+                </div>
 
-                  <button className="bg-green-600 opacity-90 hover:bg-green-500 hover:opacity-100 shadow-lg rounded-lg w-24 text-white h-14">
-                    Confirm
-                  </button>
-                </form>
-              </div>
+                <button className="bg-green-600 opacity-90 hover:bg-green-500 hover:opacity-100 shadow-lg rounded-lg w-24 text-white h-14">
+                  Confirm
+                </button>
+              </form>
             </div>
-          </Modal.Body>
-        </Modal>
-     
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

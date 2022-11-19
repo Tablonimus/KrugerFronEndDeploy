@@ -11,7 +11,8 @@ export default function CreateEmployee() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.loggedUser);
-  if (!loggedUser) navigate("/");
+  if (!loggedUser || loggedUser.admin === false ) navigate("/");
+
 
   const registeredUsers = useSelector((state) => state.employees);
 

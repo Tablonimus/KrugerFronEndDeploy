@@ -11,7 +11,7 @@ export default function Employees() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.loggedUser);
-  if (!loggedUser) navigate("/");
+   if (!loggedUser || loggedUser.admin === false ) navigate("/");
 
   useEffect(() => {
     dispatch(getAllEmployees());
@@ -25,7 +25,7 @@ export default function Employees() {
 
       <Filters />
 
-      <div className="w-1/2 flex flex-col  items-center justify-center p-24 gap-5">
+      <div className="w-1/2 flex flex-col items-center justify-center p-24 gap-5">
         {employees?.length > 0
           ? employees?.map((employee) => {
               return (
