@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../Bars/NavBar";
 import edit from "../../assets/images/edit.png";
 import profile from "../../assets/images/profile.png";
-import { patchUser } from "../../redux/actions";
+import { getUserProfile, patchUser } from "../../redux/actions";
 import { Modal, Tooltip } from "flowbite-react";
 
 export default function Profile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.loggedUser);
-
+  const id = localStorage.getItem("id");
 
   useEffect(() => {
     dispatch(getUserProfile(id));
