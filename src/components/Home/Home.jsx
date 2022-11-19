@@ -15,24 +15,24 @@ import vac from "../../assets/images/vac.png";
 import { getUserProfile } from "../../redux/actions";
 
 export default function Home() {
-const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
 
   const loggedUser = useSelector((state) => state.loggedUser);
   useEffect(() => {
     dispatch(getUserProfile(id));
-    if (!loggedUser)  window.location.reload(true);
+    if (!loggedUser) window.location.reload(true);
     // if (!loggedUser) navigate("/");
-
   }, []);
-  
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
       <NavBar />
-      <h1 className="lg:text-5xl text-4xl mt-10 lg:p-10 w-screen flex justify-center items-center font-sans italic">"Bienvenido {loggedUser.name}"</h1>
-{/* <div className="flex items-center justify-center p-10">
+      <h1 className="lg:text-5xl text-4xl mt-10 lg:p-10 w-screen flex justify-center items-center font-sans italic">
+        "Bienvenido {loggedUser.name}"
+      </h1>
+      {/* <div className="flex items-center justify-center p-10">
 
 
 </div> */}
@@ -43,14 +43,18 @@ const dispatch=useDispatch()
               <ul>
                 <li>
                   {" "}
-                  <Link to="/vaccines">
+                  <Link to="/home">
                     {/* <a href="#"> */}
                     <div className="fplogo">
-                      <img src={vac} alt="fp1" className="w-96 h-" />
+                      <h5 className="text-white font-bold">
+                        {" "}
+                        Vaccination Centers
+                      </h5>
+                      {/* <img src={vac} alt="fp1" className="w-96 h-" /> */}
                     </div>
                     <div className="fptext">
                       <p className="italic">
-                        
+                        Find the closest vaccination centers around your city.
                       </p>
                     </div>
                     {/* </a>{" "} */}
@@ -60,11 +64,12 @@ const dispatch=useDispatch()
                   {" "}
                   <a href="#">
                     <div className="fplogo">
+                      <h5 className="text-white font-bold"> Detailed Info </h5>
                       {/* <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp2" /> */}
                     </div>
                     <div className="fptext">
                       <p>
-                        
+                        Read more about personal care and hygiene techniques
                       </p>
                     </div>
                   </a>{" "}
@@ -73,14 +78,10 @@ const dispatch=useDispatch()
                   {" "}
                   <a href="#">
                     <div className="fplogo">
-                      {/* <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp3" /> */}
+                      <h5 className="text-white font-bold"> Safe Travel </h5>
                     </div>
                     <div className="fptext">
-                      <p>
-                        {/* Dummy text is also used to demonstrate the appearance of
-                        different typefaces and layouts, and in general the
-                        content of dummy text is nonsensical. */}
-                      </p>
+                      <p>Know the pandemic status of each country</p>
                     </div>
                   </a>{" "}
                 </li>

@@ -63,11 +63,11 @@ a:hover {
 }
 
 .featuredPropBox ul li:nth-child(2) {
-    background-image: url('https://i.ibb.co/pzGysVS/b.jpg');
+    background-image: url('../../assets/images/covid.jpg');
 }
 
 .featuredPropBox ul li:nth-child(3) {
-    background-image: url('https://i.ibb.co/QMrtWT1/c.jpg');
+    background-image: url('../../assets/images/travel.jpg');
 }
 
 .featuredPropBox ul li:nth-child(4) {
