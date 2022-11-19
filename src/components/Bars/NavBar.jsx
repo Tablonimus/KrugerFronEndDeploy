@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import redcross from "../../assets/images/redcross.jpg";
 
 import sett from "../../assets/images/sett.png";
+import download from "../../assets/images/download.png";
 import home from "../../assets/images/home.png";
 import { logout } from "../../redux/actions";
 
@@ -64,6 +65,7 @@ export default function NavBar() {
       </div>
       <Navbar.Collapse>
         <Navbar.Link href="/home"><img src={home} alt="" className="w-8" /> Home</Navbar.Link>
+        <Navbar.Link href="/download"><img src={download} alt="" className="w-8 flex items-center" />App</Navbar.Link>
         {/* <Navbar.Link href="/navbars">Services</Navbar.Link>
         <Navbar.Link href="/navbars">Pricing</Navbar.Link>
         <Navbar.Link href="/navbars">Contact</Navbar.Link> */}
