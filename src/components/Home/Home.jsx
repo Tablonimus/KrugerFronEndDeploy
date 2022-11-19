@@ -22,7 +22,8 @@ const dispatch=useDispatch()
   const loggedUser = useSelector((state) => state.loggedUser);
   useEffect(() => {
     dispatch(getUserProfile(id));
-    if (!loggedUser) navigate("/");
+    if (!loggedUser)  window.location.reload(true);
+    // if (!loggedUser) navigate("/");
 
   }, []);
   
@@ -49,7 +50,7 @@ const dispatch=useDispatch()
                     </div>
                     <div className="fptext">
                       <p className="italic">
-                        Register your vaccinations against covid 19
+                        
                       </p>
                     </div>
                     {/* </a>{" "} */}
@@ -59,13 +60,11 @@ const dispatch=useDispatch()
                   {" "}
                   <a href="#">
                     <div className="fplogo">
-                      <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp2" />
+                      {/* <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp2" /> */}
                     </div>
                     <div className="fptext">
                       <p>
-                        Dummy text is also used to demonstrate the appearance of
-                        different typefaces and layouts, and in general the
-                        content of dummy text is nonsensical.
+                        
                       </p>
                     </div>
                   </a>{" "}
@@ -74,13 +73,13 @@ const dispatch=useDispatch()
                   {" "}
                   <a href="#">
                     <div className="fplogo">
-                      <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp3" />
+                      {/* <img src="https://i.ibb.co/3MZXqZC/logo.png" alt="fp3" /> */}
                     </div>
                     <div className="fptext">
                       <p>
-                        Dummy text is also used to demonstrate the appearance of
+                        {/* Dummy text is also used to demonstrate the appearance of
                         different typefaces and layouts, and in general the
-                        content of dummy text is nonsensical.
+                        content of dummy text is nonsensical. */}
                       </p>
                     </div>
                   </a>{" "}
