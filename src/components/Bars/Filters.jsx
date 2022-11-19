@@ -129,7 +129,7 @@ export default function Filters() {
             Filter by date
           </button>
       </div>
-      <div className="border-b border-black py-3">
+      <div className="flex items-center justify-center border-b border-black py-3">
 
           <button
             onClick={(e) => resetHandler(e)}
