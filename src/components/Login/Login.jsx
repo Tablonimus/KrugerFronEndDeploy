@@ -30,7 +30,7 @@ export default function Login() {
       } else {
         dispatch(login(user));
         toast("Logging to the site");
-        setTimeout(() => navigate("/home"), [5000]);
+        setTimeout(() => navigate("/profile"), [5000]);
       }
     } catch (error) {
       console.log(error);
