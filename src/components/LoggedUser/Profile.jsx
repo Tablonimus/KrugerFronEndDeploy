@@ -158,13 +158,14 @@ export default function Profile() {
           </span>
         </div>
         <div className="m-10 flex flex-col">
-          <button
+        <button
             onClick={onClick}
-            className="flex items-center justify-center p-5   rounded-full  p-2 bg-yellow-200 opacity-80 hover:opacity-100 hover:bg-yellow-300"
+            className="flex  flex-col items-center justify-center p-5 shadow-lg border ring  rounded-lg  p-2 bg-yellow-200 opacity-80 hover:opacity-100 hover:bg-yellow-300"
           >
             <Tooltip content="Edit Profile Info">
               <img src={profile} alt="" className="w-56" />
             </Tooltip>
+           <h5 className="font-bold">Edit Profile</h5>
           </button>
         </div>
         <React.Fragment>
