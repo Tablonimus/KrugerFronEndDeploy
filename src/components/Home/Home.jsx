@@ -32,10 +32,7 @@ export default function Home() {
       <h1 className="lg:text-5xl text-4xl mt-10 lg:p-10 w-screen flex justify-center items-center font-sans italic">
         "Bienvenido {loggedUser.name}"
       </h1>
-      {/* <div className="flex items-center justify-center p-10">
-
-
-</div> */}
+   
       <div className="container">
         <div className="row">
           <div className="col-lg-12 border-y p-5">

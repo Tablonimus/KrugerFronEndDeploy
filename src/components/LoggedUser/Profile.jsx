@@ -19,15 +19,6 @@ export default function Profile() {
     // if (!loggedUser) navigate("/");
   }, []);
 
-
-  if (!loggedUser) navigate("/");
-
-
-
-
-
-
-
   const [newUser, setNewUser] = useState({
     identification: loggedUser?.identification,
     name: loggedUser?.name,
@@ -160,7 +151,7 @@ export default function Profile() {
           </span>
           <span className="flex font-semibold">
             <span className="mr-2">Vaccine: </span>
-            {loggedUser.vaccination_status===true ? (
+            {loggedUser.vaccination_status === true ? (
               <div className="flex flex-col">
                 <span>Type: {loggedUser.vaccine_type}</span>
                 <span>Dose: {loggedUser.vaccine_dose}</span>
@@ -172,14 +163,14 @@ export default function Profile() {
           </span>
         </div>
         <div className="m-10 flex flex-col">
-        <button
+          <button
             onClick={onClick}
             className="flex  flex-col items-center justify-center p-5 shadow-lg border ring  rounded-lg  p-2 bg-yellow-200 opacity-80 hover:opacity-100 hover:bg-yellow-300"
           >
             <Tooltip content="Edit Profile Info">
               <img src={profile} alt="" className="w-56" />
             </Tooltip>
-           <h5 className="font-bold">Edit Profile</h5>
+            <h5 className="font-bold">Edit Profile</h5>
           </button>
         </div>
         <React.Fragment>

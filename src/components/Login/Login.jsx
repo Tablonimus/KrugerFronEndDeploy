@@ -25,12 +25,13 @@ export default function Login() {
     setError("");
     try {
       // await login(user.email, user.password);
-      if (!e.target.checkValidity()) {
-        console.log("review input data");
+      if (user.email==="" || user.password==="") {
+        alert("Must fill all inputs");
       } else {
-        dispatch(login(user));
+        dispatch(login(user)).then((response)=> console.log(response))
         toast("Logging to the site");
-        setTimeout(() => navigate("/profile"), [5000]);
+
+        setTimeout(() => navigate("/profile"), [3000]);
       }
     } catch (error) {
       console.log(error);

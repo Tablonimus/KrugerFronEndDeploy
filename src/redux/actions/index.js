@@ -75,22 +75,26 @@ export function login(payload) {
   return async function (dispatch) {
     try {
       console.log("payload", payload);
-      await axios.post(`${urldeploy}user/login`, payload).then((response) => {
-        const token = response.data.data.token;
-        const id = response.data.id.id;
-        localStorage.setItem("token", token);
-        localStorage.setItem("id", id);
-        setAuthToken(token);
-      });
+      await axios
+        .post("http://localhost:3001/user/login", payload)
+        .then((response) => {
+          const token = response.data.data.token;
+          const id = response.data.id.id;
+          localStorage.setItem("token", token);
+          localStorage.setItem("id", id);
+          setAuthToken(token);
+        });
       return dispatch({
         type: action.LOGIN,
         payload,
       });
     } catch (error) {
-      return dispatch({
-        type: action.LOGIN,
-        payload: error.response.data,
-      });
+      // return dispatch({
+      //   type: action.LOGIN,
+      //   payload: error.response.data,
+      // });
+      window.location.reload(true);
+      alert("Incorrect email or password");
     }
   };
 }
